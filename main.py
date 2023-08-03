@@ -59,7 +59,7 @@ def hello():
 def sleep_route():
     with tracer.start_as_current_span("sleep"):
         print("request received to wake")
-        sleep(Config.SLEEP_DURATION)
+        sleep(Config.SLEEP_DURATION, tracer)
     return "i'm awake!"
 
 
